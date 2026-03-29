@@ -11,6 +11,45 @@ This skill helps Codex:
 - normalize exports to App Store-safe sizes
 - build a contact sheet for review
 
+## Workflow
+
+The skill is built around a specific sequence so the screenshot set stays consistent and App Store-safe:
+
+1. Scan the codebase
+   - inspect fonts, colors, onboarding copy, pricing language, differentiators, and supported claims
+   - identify the app’s strongest user benefit and the real features worth selling
+
+2. Decide the campaign story
+   - turn the app into a 5 to 7 slide ad narrative
+   - define what each slide should sell in one second
+
+3. Ask for specific screenshots
+   - tell the user exactly which screens to capture
+   - specify what should be visible in each raw screenshot
+
+4. Write a layout plan
+   - lock campaign positioning, story spine, consistency spine, crop-safe rules, and export target
+   - use the plan as the source of truth before any image generation starts
+
+5. Generate a style anchor
+   - create slide 1 first with Nano Banana or Gemini
+   - use it to define typography, background language, panel treatment, device treatment, and overall visual family
+
+6. Generate the rest of the set
+   - create slides 2 to N as consistent variations of the approved anchor
+   - keep the screenshot or product visual as the main focus
+   - add relevant supporting imagery when it strengthens the message
+
+7. Normalize and crop-check exports
+   - save raw outputs to `native/`
+   - normalize to a final App Store export folder like `export-1320x2868/`
+   - verify that no text, screenshot edge, or focal visual gets cropped out
+
+8. Package review assets
+   - generate a `prompt-log.md`
+   - generate a `contact-sheet.png`
+   - present the normalized final set for review
+
 ## Included
 
 - `SKILL.md`
