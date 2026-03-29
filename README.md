@@ -85,11 +85,41 @@ output/
 
 ## Install
 
-Copy this repo into your Codex skills directory, or clone it there directly:
+You can install the skill in a few ways.
+
+### Option 1: Clone directly into your Codex skills directory
+
+Clone this repo into your Codex skills directory:
 
 ```bash
 git clone https://github.com/chawlaaditya/NanoBananaASO.git "${CODEX_HOME:-$HOME/.codex}/skills/nano-banana-app-store-campaign"
 ```
+
+### Option 2: Use the built-in Codex skill installer
+
+If you already have the Codex system skills available locally, you can install from GitHub with the built-in installer:
+
+```bash
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --repo chawlaaditya/NanoBananaASO \
+  --path .
+```
+
+After installing, restart Codex so the new skill is picked up.
+
+### About `npx skills add`
+
+This repo is packaged as a normal Codex skill repository. In the local Codex setup used to build and validate this skill, the verified install paths are:
+- clone into `${CODEX_HOME:-$HOME/.codex}/skills`
+- or use the built-in `install-skill-from-github.py` helper
+
+If your environment exposes an `npx` wrapper for skill installation, point it at this GitHub repo URL:
+
+```text
+https://github.com/chawlaaditya/NanoBananaASO.git
+```
+
+Use the native command for your local wrapper, but prefer the verified methods above if you want the exact installation path used during validation.
 
 ## Use
 
