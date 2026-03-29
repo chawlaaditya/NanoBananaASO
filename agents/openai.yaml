@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nano Banana ASO"
+  short_description: "Plan, anchor, and export consistent App Store ad sets."
+  default_prompt: "Use $nano-banana-app-store-campaign to analyze this app, tell me which screenshots to capture, lock a Nano Banana style anchor, and generate a consistent App Store screenshot campaign."
