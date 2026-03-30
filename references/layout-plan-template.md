@@ -11,6 +11,7 @@ Create a [N]-slide iPhone App Store campaign from the provided screenshots.
 
 Generation path:
 - [Nano Banana / Gemini / other]
+- if Nano Banana is implemented through Gemini, write: `Nano Banana via Gemini Pro Image Preview`
 
 Campaign positioning:
 - [primary product story]

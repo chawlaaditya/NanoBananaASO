@@ -2,7 +2,7 @@
 
 An agent skill for building premium, consistent App Store screenshot campaigns with Nano Banana or Gemini image generation.
 
-This skill helps Codex:
+This skill helps an agent:
 - analyze an app codebase for brand, claims, and differentiators
 - decide which app screens should be captured
 - write a layout plan before image generation
@@ -80,6 +80,7 @@ output/
 ## Model Guidance
 
 - Prefer `Nano Banana` when available.
+- If your workflow treats Nano Banana as Gemini, use `Nano Banana via Gemini Pro Image Preview`.
 - For Gemini, prefer the `Pro Image Preview` model path for final campaign generation.
 - Do not silently fall back to Flash for the main set.
 

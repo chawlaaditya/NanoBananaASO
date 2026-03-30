@@ -1,6 +1,6 @@
 # Gemini Image API
 
-Use this when the user wants Gemini instead of Nano Banana.
+Use this when the user wants Gemini instead of Nano Banana, or when the user says Nano Banana is Gemini in their workflow.
 
 ## Model preference
 
@@ -11,6 +11,9 @@ For final campaign generation:
 In this workflow, the critical rule is:
 - use a Pro Image Preview model for anchor and final slides
 - only use Flash if the user explicitly permits a lower-quality fallback
+
+If this Gemini path is standing in for Nano Banana, record it as:
+- `Nano Banana via Gemini Pro Image Preview`
 
 If your environment exposes a versioned Pro Image Preview model identifier, use that exact Pro variant. Do not silently substitute a Flash model.
 

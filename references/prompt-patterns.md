@@ -4,6 +4,8 @@ Use these as prompt shapes, not rigid copy.
 
 If Nano Banana is the chosen path, write that explicitly in the working notes or prompt log so the workflow is reproducible and the style-anchor step is unambiguous.
 
+If Nano Banana is implemented through Gemini, write that explicitly as `Nano Banana via Gemini Pro Image Preview`.
+
 ## 1. Style Anchor Prompt
 
 ```text

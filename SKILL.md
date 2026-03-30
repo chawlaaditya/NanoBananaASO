@@ -18,7 +18,9 @@ Use this skill when the user wants a screenshot campaign that:
 
 Prefer Nano Banana by default. If the user asked for Nano Banana, keep that explicit throughout the workflow instead of treating the image model as implied.
 
-When using Gemini instead of Nano Banana, prefer the Pro Image Preview model path and do not silently drop to Flash for primary generation.
+In some workflows, Nano Banana is implemented through Gemini. If the user says “Nano Banana is Gemini,” treat Gemini Pro Image Preview as the Nano Banana path and keep that wording explicit in the plan, prompts, and prompt log.
+
+When using Gemini instead of or underneath Nano Banana, prefer the Pro Image Preview model path and do not silently drop to Flash for primary generation.
 
 ## Workflow
 
@@ -29,6 +31,7 @@ Before planning prompts or generating any slides, confirm which image-generation
 Default behavior:
 - prefer Nano Banana
 - if the user already said “use Nano Banana,” treat that as locked
+- if the user says Nano Banana is Gemini, use Gemini Pro Image Preview as the Nano Banana path
 - if the user specified Gemini or provided a Gemini API key, use the Gemini path
 
 For the Gemini path:
@@ -42,6 +45,9 @@ In plans, notes, and prompt logs, state the chosen path explicitly:
 - `Nano Banana`
 - `Gemini`
 - or another specific model path
+
+If Nano Banana is being run through Gemini, record it like this:
+- `Nano Banana via Gemini Pro Image Preview`
 
 Do not leave the image-generation tool ambiguous.
 
@@ -242,6 +248,13 @@ Generate slide 1 first as the style anchor:
 - define the family’s typography, panel treatment, device lighting, accent behavior, and negative-space philosophy
 - define the supporting imagery language for the whole set: people, places, objects, or contextual scenes that match the app
 - keep the screenshot as the hero while the supporting imagery makes the slide feel richer and more alive
+- treat the anchor as the formal definition of:
+  - typography
+  - background language
+  - panel treatment
+  - device treatment
+  - accent behavior
+  - overall visual family
 
 If there is no stronger app-specific direction, use the proven portrait recipe from [references/visual-recipe.md](references/visual-recipe.md) as the default composition system.
 
@@ -257,6 +270,7 @@ This is the key consistency trick:
 - use the normalized export of slide 1 as the follow-up style reference, not an arbitrary raw output
 
 If Nano Banana is the chosen path, state that explicitly in the layout plan and prompt log.
+If Nano Banana is implemented through Gemini, state that explicitly in the layout plan and prompt log too.
 
 ### 6. Generate the rest of the campaign
 
@@ -423,6 +437,11 @@ If Nano Banana is the chosen path:
 - describe slide 1 as the Nano Banana style anchor
 - describe later slides as consistent variants derived from that anchor
 
+If Nano Banana is implemented through Gemini:
+- say `Nano Banana via Gemini Pro Image Preview` explicitly in the plan or prompt log
+- still describe slide 1 as the Nano Banana style anchor
+- keep the exact Gemini model path in the notes so the workflow is reproducible
+
 If Gemini is the chosen path:
 - use the Pro Image Preview model path
 - state the model explicitly in the prompt log or generation notes
@@ -445,6 +464,7 @@ When generating a value slide with no screenshot, say so explicitly.
 
 Actively avoid these common bad outcomes:
 - leaving the image-generation tool ambiguous when the user asked for Nano Banana
+- failing to record that Nano Banana is being run through Gemini when that is the actual path
 - using a Flash image model as the default Gemini path
 - skipping the copy-first phase or generating layouts before headlines are locked
 - writing screenshot text like feature documentation instead of an ad argument
