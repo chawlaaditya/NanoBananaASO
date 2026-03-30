@@ -51,7 +51,9 @@ The skill is built around a specific sequence so the screenshot set stays consis
 8. Normalize and crop-check exports
    - save raw outputs to `native/`
    - normalize to a final App Store export folder like `export-1320x2868/`
+   - visually inspect the normalized images, not just the raw renders
    - verify that no text, screenshot edge, or focal visual gets cropped out
+   - if cropping is off, regenerate, normalize again, and keep checking until it works
    - use stricter center-safe rules on text-heavy slides, not just the default edge margins
 
 9. Package review assets

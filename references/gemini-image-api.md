@@ -1,47 +1,28 @@
-# Gemini Image API
+# Gemini Credential Notes
 
-Use this when the user wants Gemini instead of Nano Banana, or when the user says Nano Banana is Gemini in their workflow.
+This skill uses Nano Banana only.
 
-## Model preference
+This file exists because some Nano Banana environments rely on Gemini credentials for authentication.
+Treat the Gemini key as a credential requirement, not as permission to switch image models.
 
-For final campaign generation:
-- prefer the Pro Image Preview model path
-- do not default to Flash for the main campaign
+## Credential check order
 
-In this workflow, the critical rule is:
-- use a Pro Image Preview model for anchor and final slides
-- only use Flash if the user explicitly permits a lower-quality fallback
+Before generation:
 
-If this Gemini path is standing in for Nano Banana, record it as:
-- `Nano Banana via Gemini Pro Image Preview`
+1. Check `GEMINI_API_KEY`.
+2. If it is missing, check `GOOGLE_API_KEY`.
+3. If both are missing, ask the user for the Gemini API key and stop generation until it is available.
 
-If your environment exposes a versioned Pro Image Preview model identifier, use that exact Pro variant. Do not silently substitute a Flash model.
+## Hard rules
 
-## Python calling pattern
+- keep the image-generation path labeled as `Nano Banana`
+- do not switch to another image model because credentials are missing
+- do not silently fall back to Flash or a lower-quality path
+- record the credential source in the prompt log or notes
 
-```python
-from google import genai
-from google.genai import types
+## Prompt-log notation
 
-client = genai.Client(api_key=GEMINI_API_KEY)
-
-response = client.models.generate_content(
-    model="gemini-3-pro-image-preview",
-    contents=[prompt, *opened_images],
-    config=types.GenerateContentConfig(
-        response_modalities=["IMAGE"],
-    ),
-)
-```
-
-## Workflow guidance
-
-- use the Pro Image Preview model for slide 1
-- use the normalized export of slide 1 as the style reference for slides 2 to N
-- keep a prompt log that records the model used
-- normalize outputs after generation
-- run a crop-verification pass on normalized exports
-
-## Quality rule
-
-If a Pro Image Preview model is available, do not let the workflow quietly degrade to Flash for the main set.
+- `Nano Banana`
+- `Nano Banana credential source: GEMINI_API_KEY`
+- or `Nano Banana credential source: GOOGLE_API_KEY`
+- or `Nano Banana credential source: user-provided key`

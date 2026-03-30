@@ -28,7 +28,9 @@ Use this checklist before presenting the campaign as done.
 - Value slides without screenshots still feel part of the same campaign.
 - Decorative elements support the message instead of filling empty space.
 - The normalized export does not crop out any critical text or focal visuals.
+- The normalized export has been visually inspected slide by slide, not just assumed to be fine.
 - Screenshot-based slides are not reduced to text-over-screenshot billboards.
+- The slide still makes sense visually even before you read the text.
 
 ## Copy
 
@@ -46,7 +48,9 @@ Revise the set if you see any of these:
 - every slide using the same screenshot-weight and composition rhythm
 - value slide that looks like “AI art” instead of a product ad
 - too much copy on a single slide
+- the copy is doing most of the explaining because the visual idea is weak
 - decorative chips that simply restate the support line
 - headlines, chips, or key visuals clipped after normalization
+- the first normalized pass showed a crop issue and the slide was not regenerated and rechecked
 - random people, places, or objects that do not clearly belong to the app story
 - vibrant colors or photos that overpower the screenshot instead of supporting it

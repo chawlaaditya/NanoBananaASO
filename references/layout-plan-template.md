@@ -10,8 +10,8 @@ Use this file as the starting point for the campaign plan you write before image
 Create a [N]-slide iPhone App Store campaign from the provided screenshots.
 
 Generation path:
-- [Nano Banana / Gemini / other]
-- if Nano Banana is implemented through Gemini, write: `Nano Banana via Gemini Pro Image Preview`
+- `Nano Banana`
+- credential source: [`GEMINI_API_KEY` / `GOOGLE_API_KEY` / ask user]
 
 Campaign positioning:
 - [primary product story]
@@ -90,12 +90,14 @@ Campaign positioning:
 - do not let decorative elements block key UI
 - keep the screenshot or product visual as the main focus
 - use relevant supporting imagery to enrich the ad instead of relying on text alone
+- prefer visual explanation over extra explanatory copy
 
 ### Layout rules
 - one slide, one idea
 - adjacent slides must not reuse the same placement
 - mix at least 3 slide archetypes across the set when the count allows
 - headline readable in about one second
+- the visual should communicate most of the idea before the text does
 - every decorative element must reinforce the slide’s message
 - all critical content must survive the final normalized crop
 
@@ -156,6 +158,7 @@ Campaign positioning:
 4. Normalize slide 1 into `export-<width>x<height>/`.
 5. Generate slides 2 to N using the normalized slide 1 export as the style reference.
 6. State the chosen image tool in the prompt log or generation notes.
+6.5. Record whether the Nano Banana credential came from `GEMINI_API_KEY`, `GOOGLE_API_KEY`, or the user.
 7. Normalize all exports.
 8. Build a contact sheet.
 ```

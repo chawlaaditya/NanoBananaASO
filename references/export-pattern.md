@@ -28,6 +28,7 @@ output/
 - Use the normalized export of slide 1 as the follow-up style reference.
 - Generate source slides with crop-safe margins so normalization does not remove key content.
 - Run at least one anchor crop-verification pass and one final full-set crop-verification pass.
+- During each crop-verification pass, visually inspect the normalized images themselves and keep regenerating until the crop works.
 
 ## Why this matters
 
@@ -44,6 +45,7 @@ This pattern fixes two common failure modes:
 3. Cropped-off copy or focal visuals
    - If the source image uses the full canvas too aggressively, normalization can clip the layout.
    - Design the source image with sacrificial edge space and safe margins from the start.
+   - Then inspect the normalized output visually and loop until the export is clean.
 
 4. Flat billboard compositions
    - If the slide relies on text plus a screenshot with no richer visual language, it will feel cheap.

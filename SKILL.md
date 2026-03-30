@@ -1,6 +1,6 @@
 ---
 name: nano-banana-app-store-campaign
-description: "Build premium, consistent App Store screenshot campaigns with Nano Banana or Gemini image models. Use when Codex needs to analyze an app codebase for brand, style, and claims, decide which screens should be captured, direct the user to take specific screenshots, turn those screenshots into advertisement-first App Store slides, keep a consistent style anchor across the set, and normalize the final exports to App Store portrait sizes."
+description: "Build premium, consistent App Store screenshot campaigns with Nano Banana. Use when Codex needs to analyze an app codebase for brand, style, and claims, decide which screens should be captured, direct the user to take specific screenshots, turn those screenshots into advertisement-first App Store slides, keep a consistent style anchor across the set, and normalize the final exports to App Store portrait sizes."
 ---
 
 # Nano Banana App Store Campaign
@@ -8,48 +8,41 @@ description: "Build premium, consistent App Store screenshot campaigns with Nano
 Build App Store screenshots as ads, not tutorials.
 
 Copy comes before layout. Narrative comes before decoration.
-The overlay text is usually the argument. The UI is supporting evidence.
+The slide should explain itself visually first.
+The text should sharpen the message, not do all the work.
 
 Use this skill when the user wants a screenshot campaign that:
 - starts from the actual app codebase and real screenshots
 - needs a consistent visual system across all slides
-- uses Nano Banana or Gemini image generation for the ad treatment
+- uses Nano Banana for the ad treatment
 - needs deterministic resizing and contact-sheet packaging
 
-Prefer Nano Banana by default. If the user asked for Nano Banana, keep that explicit throughout the workflow instead of treating the image model as implied.
-
-In some workflows, Nano Banana is implemented through Gemini. If the user says “Nano Banana is Gemini,” treat Gemini Pro Image Preview as the Nano Banana path and keep that wording explicit in the plan, prompts, and prompt log.
-
-When using Gemini instead of or underneath Nano Banana, prefer the Pro Image Preview model path and do not silently drop to Flash for primary generation.
+Use Nano Banana only in this skill.
+Do not switch to other image models.
+Do not silently fall back to Flash or any lower-quality image path.
 
 ## Workflow
 
-### 0. Confirm the image-generation path
+### 0. Confirm Nano Banana credentials
 
-Before planning prompts or generating any slides, confirm which image-generation path will be used.
+Before planning prompts or generating any slides, confirm that Nano Banana can actually run in the current environment.
 
 Default behavior:
-- prefer Nano Banana
-- if the user already said “use Nano Banana,” treat that as locked
-- if the user says Nano Banana is Gemini, use Gemini Pro Image Preview as the Nano Banana path
-- if the user specified Gemini or provided a Gemini API key, use the Gemini path
+- use `Nano Banana`
+- first check whether `GEMINI_API_KEY` is set
+- if not, check whether `GOOGLE_API_KEY` is set
+- if neither key is available, stop and ask the user for the Gemini API key before generation
 
-For the Gemini path:
-- prefer the Pro Image Preview model
-- do not default to Flash for final campaign generation
-- only use a Flash model if the user explicitly accepts lower-quality fallback behavior
-
-If the path is unclear, ask one short question and resolve it before generation.
+Do not treat a missing key as permission to use another image model.
 
 In plans, notes, and prompt logs, state the chosen path explicitly:
 - `Nano Banana`
-- `Gemini`
-- or another specific model path
 
-If Nano Banana is being run through Gemini, record it like this:
-- `Nano Banana via Gemini Pro Image Preview`
+When credential discovery matters, record it like this:
+- `Nano Banana credential source: GEMINI_API_KEY`
+- or `Nano Banana credential source: GOOGLE_API_KEY`
 
-Do not leave the image-generation tool ambiguous.
+Do not leave the tool or credential source ambiguous.
 
 ### 1. Inspect the app before designing anything
 
@@ -115,6 +108,8 @@ Core story rules:
 - copy must be readable at thumbnail size
 - decorative elements must support the message, never block the UI
 - the screenshot should remain the main focal point on screenshot-based slides
+- prioritize visual explanation over textual explanation
+- aim for a clean balance of text and visual, but when forced to choose, strengthen the visual before adding more copy
 - avoid billboard-only compositions that feel like text pasted over a screenshot
 - allow 1 to 2 deliberately ad-led slides where typography or contextual imagery carries more of the weight than the screenshot
 - integrate relevant supporting imagery such as people, places, objects, surfaces, or contextual scenes that are consistent with the app category
@@ -154,7 +149,9 @@ Do not build layouts before the headlines are strong enough.
 
 Get headline approval before final layout generation. Bad copy ruins good design.
 
-Assume screenshot performance is driven more by the text overlay than the UI arrangement. Treat copy as the highest-leverage design variable.
+Treat copy as a precision tool, not as the whole slide.
+The visual should communicate the feature, mood, or outcome first.
+The text should make that meaning faster and clearer, not replace the visual explanation.
 
 For each planned slide:
 - write 3 headline options before layout work
@@ -186,7 +183,7 @@ Render-safe copy rule:
   - `Line 1`
   - `Line 2`
 - explicitly tell the image model not to render literal `<br />` characters in the final image
-- do not assume Nano Banana or Gemini will interpret HTML-style line break tokens correctly
+- do not assume Nano Banana will interpret HTML-style line break tokens correctly
 
 Use these headline modes:
 
@@ -198,6 +195,7 @@ Use these headline modes:
 
 Rewrite weak copy before layout generation. Prefer the user's benefit, not the UI inventory.
 Do not describe features first. Lead with the life change, then let the feature support it.
+If a slide needs too much text to make sense, fix the visual concept before writing more copy.
 
 Bad-to-better rewrite patterns:
 
@@ -308,8 +306,8 @@ This is the key consistency trick:
 - then use that scaffolded slide as the family reference for the remaining slides
 - use the normalized export of slide 1 as the follow-up style reference, not an arbitrary raw output
 
-If Nano Banana is the chosen path, state that explicitly in the layout plan and prompt log.
-If Nano Banana is implemented through Gemini, state that explicitly in the layout plan and prompt log too.
+State `Nano Banana` explicitly in the layout plan and prompt log.
+If available, also record whether the credential came from `GEMINI_API_KEY` or `GOOGLE_API_KEY`.
 
 ### 6. Generate the rest of the campaign
 
@@ -327,7 +325,7 @@ Follow these rules:
 - keep typography large and strong
 - keep claims short and specific
 - keep each slide focused on a single approved idea
-- let the text lead and the interface support the claim
+- let the visual carry the explanation and let the text sharpen the claim
 - make each background or decorative motif support the slide’s message
 - keep the screenshot or core product visual as the main focus
 - add supporting imagery only when it strengthens the message and the app category
@@ -388,7 +386,7 @@ For text-heavy or proof-heavy slides, use stronger defaults:
 - keep chips and side claims fully inside the same safe zone
 - shorten the copy before pushing type closer to the crop boundary
 
-When writing prompts, explicitly tell Nano Banana or Gemini:
+When writing prompts, explicitly tell Nano Banana:
 - compose for a later center-crop to the final App Store size
 - keep all critical text and key visuals well within safe margins
 - leave sacrificial background space near the edges for normalization
@@ -399,15 +397,23 @@ If a slide looks good only before cropping, it is not done.
 
 After generating the anchor and after generating the full set:
 - normalize the current outputs
-- inspect the normalized exports, not just the native renders
+- inspect the normalized exports visually, not just the native renders
+- actually look at the images one by one
 - check that no headline, support line, screenshot edge, chip, or visual panel has been cropped awkwardly
+- check that the phone still feels intentional after cropping
+- check that no breathing room has collapsed around the headline or focal object
+- use the contact sheet as a quick overview, then still inspect the individual normalized slides at full size
 
 If the normalized export reveals any crop problem:
 - revise the source prompt
 - create more edge breathing room
 - regenerate that slide
+- normalize it again
+- inspect the new normalized image again
+- repeat until the crop is clearly working
 
-Treat this as a required second pass, not an optional polish step.
+Do not mark a slide as done just because the raw render looked good.
+Treat this as a required visual verification loop, not an optional polish step.
 
 ### 7. Handle brand-value slides separately
 
@@ -423,12 +429,14 @@ Good examples:
 - ownership card or purchase metaphor for one-time payment
 - signal-off or local-mode motif for offline use
 - private-device / local model motif for on-device AI
+- clear visual CTA cues such as a meaningful button, badge, chip, arrow, toggle, or panel that helps the slide read faster without turning into a text block
 
 Avoid:
 - robots
 - glowing brains
 - cloud clichés
 - dense spec-sheet copy
+- using extra explanatory text when a clearer visual would do the job
 
 ### 8. Normalize exports
 
@@ -448,8 +456,10 @@ Never trust the image model to return the final App Store size directly.
 
 But also:
 - do not let normalization remove essential content
-- review at least one normalized export before batch signoff
+- review the normalized images themselves before batch signoff
 - if the crop harms readability or layout, revise the source generation prompt and regenerate
+- after every regeneration, normalize again and inspect the new normalized image
+- keep iterating until the normalized export is working, not just the source render
 - run a second crop-verification pass on the full normalized set before marking it final
 
 Preferred folder structure:
@@ -488,25 +498,19 @@ If any of these failures show up, revise before presenting the work as complete:
 - slides that do not feel like one coherent campaign
 - screenshot text that reads like patch notes or feature labels
 - a sequence that works in any order because it tells no real story
+- any slide whose normalized export still looks even slightly crop-broken after the first pass
 
 ## Prompting Guidelines
 
 Use imperative prompt language with hard rules.
 
-If Nano Banana is the chosen path:
-- say “Nano Banana” explicitly in the plan or prompt log
+For this skill:
+- say `Nano Banana` explicitly in the plan or prompt log
 - describe slide 1 as the Nano Banana style anchor
 - describe later slides as consistent variants derived from that anchor
-
-If Nano Banana is implemented through Gemini:
-- say `Nano Banana via Gemini Pro Image Preview` explicitly in the plan or prompt log
-- still describe slide 1 as the Nano Banana style anchor
-- keep the exact Gemini model path in the notes so the workflow is reproducible
-
-If Gemini is the chosen path:
-- use the Pro Image Preview model path
-- state the model explicitly in the prompt log or generation notes
-- do not silently substitute Flash for the main campaign
+- check `GEMINI_API_KEY` first, then `GOOGLE_API_KEY`, before generation
+- if neither key exists, ask the user for the Gemini API key and pause generation until it is available
+- do not switch to another image model because of missing credentials
 
 Always include:
 - preserve the screenshot faithfully
@@ -515,7 +519,7 @@ Always include:
 - keep headline line breaks intentional with `<br />` when needed
 - keep the slide advertisement-first
 - keep each slide focused on one idea only
-- make the copy the argument and the UI the visual proof
+- make the visual do the explaining first and let the copy make it faster to understand
 - keep the slide in the same family as the style anchor
 - make the visual language reinforce the slide’s message
 - when using planned `<br />` copy, convert it into explicit prompt lines rather than pasting the token literally
@@ -528,8 +532,9 @@ When generating a value slide with no screenshot, say so explicitly.
 
 Actively avoid these common bad outcomes:
 - leaving the image-generation tool ambiguous when the user asked for Nano Banana
-- failing to record that Nano Banana is being run through Gemini when that is the actual path
-- using a Flash image model as the default Gemini path
+- skipping the Gemini credential check before attempting Nano Banana generation
+- continuing without `GEMINI_API_KEY` or `GOOGLE_API_KEY` and pretending generation is unblocked
+- switching to another image model because the Gemini key is missing
 - skipping the copy-first phase or generating layouts before headlines are locked
 - writing screenshot text like feature documentation instead of an ad argument
 - pasting `<br />` directly into an image-generation prompt and getting the token rendered in the output
@@ -537,7 +542,10 @@ Actively avoid these common bad outcomes:
 - using a raw or differently sized anchor image as the follow-up family reference
 - trusting the model’s returned size instead of normalizing
 - placing text or focal visuals too close to the edges so normalization crops them out
+- checking the raw render but not the normalized image
+- running one crop pass, noticing a problem, and not looping until it is fixed
 - treating the slide like a text billboard instead of a rich product advertisement
+- explaining the feature mostly with text when the visual could have shown it more clearly
 - adding random imagery that is not clearly connected to the app category or message
 - using the same vague background treatment on multiple slides
 - using the same screenshot-plus-headline layout on nearly every slide
@@ -567,7 +575,7 @@ Read these only when needed:
 - [references/quality-gates.md](references/quality-gates.md): review checklist for story and visual consistency
 - [references/export-pattern.md](references/export-pattern.md): exact folder and normalization pattern from the working v3 campaign
 - [references/visual-recipe.md](references/visual-recipe.md): the specific visual decisions that worked well in the strong v3 set
-- [references/gemini-image-api.md](references/gemini-image-api.md): Gemini Pro Image Preview guidance and calling pattern
+- [references/gemini-image-api.md](references/gemini-image-api.md): Nano Banana credential notes for Gemini-backed environments
 
 ### scripts/
 

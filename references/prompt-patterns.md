@@ -4,7 +4,7 @@ Use these as prompt shapes, not rigid copy.
 
 If Nano Banana is the chosen path, write that explicitly in the working notes or prompt log so the workflow is reproducible and the style-anchor step is unambiguous.
 
-If Nano Banana is implemented through Gemini, write that explicitly as `Nano Banana via Gemini Pro Image Preview`.
+In the prompt log, write `Nano Banana` explicitly and note whether credentials came from `GEMINI_API_KEY`, `GOOGLE_API_KEY`, or the user.
 
 ## 1. Style Anchor Prompt
 
@@ -46,6 +46,7 @@ Lock these family traits in the anchor:
 Hard rules:
 - preserve the supplied screenshot faithfully
 - do not redesign the app UI
+- let the visual concept explain the slide before the text does
 - keep typography readable at thumbnail size
 - keep the result portrait
 - compose for a later center-crop to the final App Store size
@@ -105,6 +106,7 @@ Layout direction:
 Hard rules:
 - preserve the screenshot faithfully
 - do not redesign the app UI
+- prefer a stronger visual explanation over adding more text
 - vary the layout from adjacent slides
 - vary the archetype weight from adjacent slides when helpful
 - use the same headline font family or type style as the anchor
@@ -153,6 +155,7 @@ Layout direction:
 [LAYOUT]
 
 Hard rules:
+- use oversized, highly readable typography, but do not let text completely replace the visual idea
 - use oversized, highly readable typography
 - do not fabricate a fake screenshot
 - if you include the app icon, object, mascot, or lifestyle cutout, make it feel premium and category-specific
@@ -195,6 +198,7 @@ Layout direction:
 Hard rules:
 - do not fabricate a fake app screen
 - use 2 to 3 meaningful premium panels or motifs to sell the claims
+- let the motifs and composition communicate most of the meaning before the copy does
 - avoid generic AI imagery, robots, and cloud clichés
 - prefer concrete category symbols such as rewards, certificates, routes, coins, objects, scenes, or brand characters when relevant
 - keep typography readable at thumbnail size
