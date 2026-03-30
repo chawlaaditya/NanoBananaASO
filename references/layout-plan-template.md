@@ -31,6 +31,20 @@ Campaign positioning:
 - slide 6 sells: [next narrative beat]
 - optional slide 7 sells: [value / pricing / privacy / ownership]
 
+## Visual Rhythm Plan
+
+- slide 1 archetype: [Typography-led hero / Hybrid ad / Product proof / Contextual-lifestyle / Brand-value]
+- slide 2 archetype: [archetype]
+- slide 3 archetype: [archetype]
+- slide 4 archetype: [archetype]
+- slide 5 archetype: [archetype]
+- slide 6 archetype: [archetype]
+- optional slide 7 archetype: [archetype]
+- boldest slide: [which slide and why]
+- cleanest proof slide: [which slide and why]
+- richest supporting-imagery slide: [which slide and why]
+- contrast-slide plan: [where the set deliberately shifts tone]
+
 ## Consistency Spine
 
 - typography DNA: [display feel + support feel]
@@ -80,6 +94,7 @@ Campaign positioning:
 ### Layout rules
 - one slide, one idea
 - adjacent slides must not reuse the same placement
+- mix at least 3 slide archetypes across the set when the count allows
 - headline readable in about one second
 - every decorative element must reinforce the slide’s message
 - all critical content must survive the final normalized crop
@@ -88,6 +103,7 @@ Campaign positioning:
 
 ### Slide 1
 - screenshot: `[file]`
+- archetype: `[archetype]`
 - headline: `[headline]`
 - support: `[support]`
 - chips:
@@ -97,20 +113,24 @@ Campaign positioning:
   - [what this slide sells]
 - layout:
   - [composition notes]
+  - [supporting imagery / motifs]
 
 ### Slide 2
 - screenshot: `[file]`
+- archetype: `[archetype]`
 - headline: `[headline]`
 - support: `[support]`
 - purpose:
   - [what this slide sells]
 - layout:
   - [composition notes]
+  - [supporting imagery / motifs]
 
 [Repeat for all slides]
 
 ### Optional Value Slide
 - screenshot: none
+- archetype: `Brand-value`
 - headline: `[headline]`
 - support: `[support]`
 - purpose:

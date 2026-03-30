@@ -107,6 +107,7 @@ Core story rules:
 - never put two features on one slide
 - the first slide sells the strongest user benefit, not the broadest overview
 - the sequence should feel intentional from slide to slide, not interchangeable
+- plan the set as a mix of slide archetypes, not one repeated template
 - use the requested slide count to choose the best-fitting slots instead of blindly filling every slot
 - vary layouts across slides and do not repeat the same template structure
 - adjacent slides must not reuse the same phone placement
@@ -115,8 +116,27 @@ Core story rules:
 - decorative elements must support the message, never block the UI
 - the screenshot should remain the main focal point on screenshot-based slides
 - avoid billboard-only compositions that feel like text pasted over a screenshot
+- allow 1 to 2 deliberately ad-led slides where typography or contextual imagery carries more of the weight than the screenshot
 - integrate relevant supporting imagery such as people, places, objects, surfaces, or contextual scenes that are consistent with the app category
 - make the set eye-catching and vibrant without becoming noisy or generic
+
+Use these slide archetypes intentionally. Most good sets mix at least 3 of them:
+
+| Archetype | What it is for | Typical use |
+| --- | --- | --- |
+| `Typography-led hero` | Large bold type with minimal product framing | slide 1, trust slide, or a value slide |
+| `Hybrid ad` | Screenshot plus strong contextual imagery, stickers, badges, paths, or objects | differentiator and outcome slides |
+| `Product proof` | Screenshot-forward slide with restrained supporting fragments | core feature and proof slides |
+| `Contextual/lifestyle` | Real-world scene, person, mascot, place, or object that makes the benefit feel alive | emotional differentiator or category fit |
+| `Brand/value` | No fake screenshot; typography, iconography, objects, or value panels only | ownership, privacy, rewards, pricing, trust |
+
+Archetype rules:
+- do not make every slide a product-proof slide
+- do not make every slide a text billboard either
+- at least one slide should feel like a bold ad first, not just a dressed-up screenshot
+- if the app category supports it, include at least one slide with contextual imagery that sells the lifestyle or setting around the app
+- when using contextual imagery, tie it directly to the message: travel places, routes, food, trainers, coins, certificates, characters, rooms, desks, or objects that the user immediately understands
+- allow one slide to minimize or even omit the phone when the message is stronger as a pure value ad
 
 When compressing the story into fewer slides:
 - keep `#1` hero
@@ -225,6 +245,7 @@ The layout plan is the source of truth for:
 - slide order
 - approved headline/support copy
 - the three headline options considered for each slide when useful
+- the slide-archetype plan for the whole set
 - phone placement variety
 - layout variation strategy
 - contrast-slide plan
@@ -233,6 +254,13 @@ The layout plan is the source of truth for:
 - export target
 
 Do not skip this step. The plan is what prevents style drift.
+
+Before generation, also lock a visual-rhythm plan:
+- which slides are typography-led versus screenshot-led
+- which slide gets the boldest headline treatment
+- which slide uses the richest supporting imagery
+- which slide is the cleanest proof slide
+- where the set intentionally changes from light to dark, flat to dimensional, or calm to energetic
 
 ### 5. Generate a style anchor first
 
@@ -248,6 +276,7 @@ Generate slide 1 first as the style anchor:
 - define the family’s typography, panel treatment, device lighting, accent behavior, and negative-space philosophy
 - define the supporting imagery language for the whole set: people, places, objects, or contextual scenes that match the app
 - keep the screenshot as the hero while the supporting imagery makes the slide feel richer and more alive
+- if the campaign would open stronger with a typography-led or hybrid-ad slide, let the anchor establish that bolder direction instead of defaulting to a centered phone
 - treat the anchor as the formal definition of:
   - typography
   - background language
@@ -281,8 +310,10 @@ Follow these rules:
 - do not redesign the product
 - use enlarged UI fragments only from the same screenshot
 - keep the campaign in the same family
+- alternate between cleaner proof slides and richer ad slides when the story benefits from it
 - vary phone placement across adjacent slides
 - vary the overall composition rhythm across the set
+- vary the amount of screenshot dominance across the set
 - keep typography large and strong
 - keep claims short and specific
 - keep each slide focused on a single approved idea
@@ -291,6 +322,15 @@ Follow these rules:
 - keep the screenshot or core product visual as the main focus
 - add supporting imagery only when it strengthens the message and the app category
 - avoid dead empty backgrounds and avoid text-only billboard compositions
+
+Use tasteful variation signals pulled from strong App Store campaigns:
+- bold color-field slides with oversized headline type
+- a few sticker, badge, path, orbit, ribbon, or glow motifs when they reinforce the claim
+- clean footer bands or compact value bars when they add structure
+- occasional cutout photography, mascots, objects, or scene fragments that make the app feel lived-in
+- one restrained proof slide after a louder ad slide so the set can breathe
+
+Do not confuse consistency with sameness. The set should feel art-directed, not templated.
 
 For every follow-up prompt, explicitly restate the style DNA from the anchor:
 - typography scale
@@ -357,6 +397,8 @@ If the set needs a slide for pricing, offline use, privacy, on-device AI, or own
 - do not use random abstract imagery with no message
 - build a typography-led value slide
 - use 2 to 3 meaningful premium panels or motifs that communicate the claims
+- consider using the app icon, mascot, category objects, certificates, rewards, routes, coins, or other concrete symbols instead of another phone
+- let one of these slides function as a true brand ad with large type and minimal UI if that improves the campaign rhythm
 
 Good examples:
 - ownership card or purchase metaphor for one-time payment
@@ -475,6 +517,9 @@ Actively avoid these common bad outcomes:
 - treating the slide like a text billboard instead of a rich product advertisement
 - adding random imagery that is not clearly connected to the app category or message
 - using the same vague background treatment on multiple slides
+- using the same screenshot-plus-headline layout on nearly every slide
+- making every slide equally screenshot-heavy so the campaign has no rhythm
+- refusing to use bold type-led or value-led ad slides even when they would sell the message better
 - generating all slides before the style anchor is locked
 - treating the layout plan as optional
 - reusing the same slide template structure across the set
@@ -513,6 +558,7 @@ Before finishing, confirm:
 - headlines were written and locked before final layouts
 - the text alone tells a coherent story when the UI is covered
 - adjacent slides vary in placement
+- the set mixes clean proof slides with at least one more expressive ad-led slide when appropriate
 - the set includes visual rhythm instead of one repeated template
 - claims are grounded in the app
 - the set feels visually consistent

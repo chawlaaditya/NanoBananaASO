@@ -15,6 +15,9 @@ Use the attached layout plan as the visual source of truth.
 Use the attached app screenshot faithfully.
 If a category-specific lifestyle or product image is attached, use it only as subtle background atmosphere.
 
+Slide archetype:
+[Typography-led hero / Hybrid ad / Product proof / Contextual-lifestyle / Brand-value]
+
 Required copy:
 Headline: [HEADLINE]
 Support: [SUPPORT]
@@ -48,6 +51,7 @@ Hard rules:
 - keep the screenshot or core product visual as the hero
 - avoid text-only billboard compositions
 - use relevant supporting people, places, or objects only when they strengthen the app story
+- make the slide feel art-directed, not templated
 - make it feel like an ad, not a tutorial
 - no fake ratings, no fake testimonials, no invented features
 ```
@@ -73,6 +77,9 @@ The result must clearly belong to the same visual family:
 Use the attached layout plan as the ruleset.
 Use the supplied screenshot faithfully.
 
+Slide archetype:
+[Hybrid ad / Product proof / Contextual-lifestyle]
+
 Required copy:
 Headline: [HEADLINE]
 Support: [SUPPORT]
@@ -91,6 +98,7 @@ Hard rules:
 - preserve the screenshot faithfully
 - do not redesign the app UI
 - vary the layout from adjacent slides
+- vary the archetype weight from adjacent slides when helpful
 - keep decorative elements behind or around the product
 - make the background and motifs reinforce the slide message
 - compose for a later center-crop to the final App Store size
@@ -102,7 +110,46 @@ Hard rules:
 - no fabricated claims
 ```
 
-## 3. Value Slide Prompt
+## 3. Typography-Led Hero or Brand Slide Prompt
+
+Use this when the campaign needs a punchier ad slide with little or no screenshot emphasis.
+
+```text
+Create a premium App Store campaign slide using the first attached image as the campaign style reference.
+
+This should feel like a bold advertisement, not a tutorial panel.
+
+Slide archetype:
+Typography-led hero or brand-value
+
+Required copy:
+Headline: [HEADLINE]
+Support: [SUPPORT]
+
+Core message:
+[MESSAGE]
+
+Visual motifs:
+- [ICON / OBJECT / BADGE / SCENE]
+- [ICON / OBJECT / BADGE / SCENE]
+
+Layout direction:
+[LAYOUT]
+
+Hard rules:
+- use oversized, highly readable typography
+- do not fabricate a fake screenshot
+- if you include the app icon, object, mascot, or lifestyle cutout, make it feel premium and category-specific
+- use only 1 to 3 strong motifs, not a pile of filler
+- keep the slide in the same campaign family as the style reference
+- avoid generic AI imagery, robots, and cloud clichés
+- keep the composition energetic but controlled
+- compose for a later center-crop to the final App Store size
+- keep all critical text and focal visuals well inside safe margins
+- leave sacrificial background space near the edges
+```
+
+## 4. Value Slide Prompt
 
 Use this when there is no screenshot.
 
@@ -110,6 +157,9 @@ Use this when there is no screenshot.
 Create a premium App Store value slide using the first attached image as the campaign style reference.
 
 This slide has no app screenshot. Build a typography-led brand/value composition in the same campaign family.
+
+Slide archetype:
+Brand-value
 
 Required copy:
 Headline: [HEADLINE]
@@ -125,6 +175,7 @@ Hard rules:
 - do not fabricate a fake app screen
 - use 2 to 3 meaningful premium panels or motifs to sell the claims
 - avoid generic AI imagery, robots, and cloud clichés
+- prefer concrete category symbols such as rewards, certificates, routes, coins, objects, scenes, or brand characters when relevant
 - keep typography readable at thumbnail size
 - keep the composition advertisement-first
 - make the visual motifs directly reinforce the claims instead of acting as filler

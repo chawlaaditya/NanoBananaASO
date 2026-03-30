@@ -17,11 +17,14 @@ Use this checklist before presenting the campaign as done.
 - Panel treatment and decorative language feel related.
 - Accent colors and background logic do not randomly drift.
 - Supporting imagery feels category-appropriate and coherent across the set.
+- The set feels varied on purpose, not uniform by accident.
 
 ## Layout
 
 - Adjacent slides do not repeat the same phone placement.
+- The set uses more than one slide archetype when the slide count allows.
 - The phone or main focal object feels intentional and dominant where needed.
+- At least one slide can stand as a bold ad even if the phone is minimized or absent.
 - Value slides without screenshots still feel part of the same campaign.
 - Decorative elements support the message instead of filling empty space.
 - The normalized export does not crop out any critical text or focal visuals.
@@ -40,6 +43,7 @@ Revise the set if you see any of these:
 - generic or random abstract backgrounds
 - plain screenshot-in-a-mockup slides
 - same layout repeated across multiple slides
+- every slide using the same screenshot-weight and composition rhythm
 - value slide that looks like “AI art” instead of a product ad
 - too much copy on a single slide
 - decorative chips that simply restate the support line

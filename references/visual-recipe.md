@@ -4,6 +4,8 @@ Use this as the default portrait recipe when the app needs a strong App Store sc
 
 This recipe is derived from the strong `campaign-v3` set that produced good-looking, properly sized screenshots.
 
+Do not treat this file as permission to repeat one layout six times. The point is to create a coherent family with deliberate variety.
+
 ## Overall look
 
 - dark editorial background
@@ -13,6 +15,17 @@ This recipe is derived from the strong `campaign-v3` set that produced good-look
 - one or two supporting UI fragments at most
 - muted accent color, not neon
 - consistent bottom chips or value tags
+
+## Taste cues from strong App Store campaigns
+
+These are the details that often make a set feel premium instead of merely correct:
+
+- one or two slides can be bold color-field ads with huge type and very little UI
+- contextual imagery can sell the category: places, routes, faces, food, trainers, desks, coins, certificates, mascots, or objects
+- supporting motifs can be sticker-like, orbital, ribbon-like, path-based, or badge-based if they reinforce the message
+- a loud expressive slide works best when followed by a cleaner proof slide
+- contrast is healthy: bright next to dark, dense next to airy, flat next to dimensional
+- the set should feel intentionally art-directed, not like a screenshot mockup template with different copy
 
 ## Proven portrait structure
 
@@ -47,13 +60,25 @@ Keep all must-read text, chips, and focal visuals inside these bounds.
 
 Use this variety pattern unless the app needs something more specific:
 
-- slide 1: centered hero phone
-- slide 2: phone offset left or right with stacked fragment cards opposite
-- slide 3: asymmetric phone with one larger supporting fragment
-- slide 4: darker immersive slide with one oversized metric or feature fragment
+- slide 1: typography-led hero or centered hero phone, whichever sells the strongest promise better
+- slide 2: hybrid ad with phone plus contextual imagery or richer motifs
+- slide 3: cleaner product-proof slide with phone offset left or right
+- slide 4: darker or lighter contrast slide with one oversized metric, route, object, or feature fragment
 - slide 5: split composition with phone on one side and proof/progress fragments opposite
-- slide 6: recap or insight slide with more centered product focus
+- slide 6: recap, trust, or brand-value slide with reduced UI density
 - slide 7: typography-led value slide with no fake app screen
+
+## Slide archetype mix
+
+Strong sets usually combine at least 3 of these:
+
+- `Typography-led hero`: big headline, spare supporting visual, maximum ad energy
+- `Hybrid ad`: screenshot plus contextual imagery, badge, sticker, object, or atmospheric scene
+- `Product proof`: screenshot-forward with restrained fragments and clearer interface proof
+- `Contextual-lifestyle`: benefit framed through a person, place, route, or object that makes the story feel lived-in
+- `Brand-value`: iconography or symbolic objects only, no screenshot required
+
+If all slides fall into the same archetype, the campaign will usually feel flat.
 
 ## Common ways to ruin this pattern
 
@@ -64,3 +89,6 @@ Use this variety pattern unless the app needs something more specific:
 - tiny phone scale
 - text too close to the edges
 - relying on normalization to fix a bad source layout
+- every slide using the same phone-plus-headline arrangement
+- adding random lifestyle imagery with no obvious relationship to the message
+- making every slide equally loud, with no calm proof slide to reset the rhythm
