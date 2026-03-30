@@ -31,21 +31,30 @@ The skill is built around a specific sequence so the screenshot set stays consis
    - lock campaign positioning, story spine, consistency spine, crop-safe rules, and export target
    - use the plan as the source of truth before any image generation starts
 
-5. Generate a style anchor
+5. Convert copy into render-safe prompts
+   - keep `<br />` line breaks in planning docs only
+   - translate final prompt copy into explicit multi-line headline blocks
+   - explicitly tell the image model not to render literal `<br />` characters
+   - shorten text-heavy slides before pushing copy toward crop edges
+
+6. Generate a style anchor
    - create slide 1 first with Nano Banana or Gemini
    - use it to define typography, background language, panel treatment, device treatment, and overall visual family
 
-6. Generate the rest of the set
+7. Generate the rest of the set
    - create slides 2 to N as consistent variations of the approved anchor
    - keep the screenshot or product visual as the main focus
    - add relevant supporting imagery when it strengthens the message
+   - explicitly lock follow-up slides to the anchor’s headline font family / type style
+   - avoid accidental serif drift or giant text-card layouts unless the anchor already uses them
 
-7. Normalize and crop-check exports
+8. Normalize and crop-check exports
    - save raw outputs to `native/`
    - normalize to a final App Store export folder like `export-1320x2868/`
    - verify that no text, screenshot edge, or focal visual gets cropped out
+   - use stricter center-safe rules on text-heavy slides, not just the default edge margins
 
-8. Package review assets
+9. Package review assets
    - generate a `prompt-log.md`
    - generate a `contact-sheet.png`
    - present the normalized final set for review
@@ -65,6 +74,8 @@ The skill is built around a specific sequence so the screenshot set stays consis
 - screenshot-led compositions with relevant supporting imagery
 - crop-safe layouts that survive final App Store normalization
 - a `native/` plus `export-<size>/` workflow
+- render-safe headline formatting for image models
+- follow-up slides that keep the anchor’s typography voice
 
 ## Default Export Pattern
 

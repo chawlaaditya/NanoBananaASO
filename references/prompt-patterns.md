@@ -19,7 +19,10 @@ Slide archetype:
 [Typography-led hero / Hybrid ad / Product proof / Contextual-lifestyle / Brand-value]
 
 Required copy:
-Headline: [HEADLINE]
+Headline ([N] lines):
+[LINE 1]
+[LINE 2]
+[Optional line 3]
 Support: [SUPPORT]
 
 Core message:
@@ -47,6 +50,7 @@ Hard rules:
 - keep the result portrait
 - compose for a later center-crop to the final App Store size
 - keep all critical text and focal visuals well inside safe margins
+- keep headline and support copy comfortably inside the center-safe zone, not hugging the side edges
 - leave sacrificial background space near the edges
 - keep the screenshot or core product visual as the hero
 - avoid text-only billboard compositions
@@ -54,6 +58,7 @@ Hard rules:
 - make the slide feel art-directed, not templated
 - make it feel like an ad, not a tutorial
 - no fake ratings, no fake testimonials, no invented features
+- do not render literal `<br />` characters in the final image
 ```
 
 ## 2. Follow-up Slide Prompt
@@ -81,7 +86,10 @@ Slide archetype:
 [Hybrid ad / Product proof / Contextual-lifestyle]
 
 Required copy:
-Headline: [HEADLINE]
+Headline ([N] lines):
+[LINE 1]
+[LINE 2]
+[Optional line 3]
 Support: [SUPPORT]
 
 Core message:
@@ -99,15 +107,20 @@ Hard rules:
 - do not redesign the app UI
 - vary the layout from adjacent slides
 - vary the archetype weight from adjacent slides when helpful
+- use the same headline font family or type style as the anchor
+- do not drift into serif headlines or a different typography voice unless the anchor already does that
 - keep decorative elements behind or around the product
 - make the background and motifs reinforce the slide message
 - compose for a later center-crop to the final App Store size
 - keep all critical text and focal visuals well inside safe margins
+- keep headline, support, and chips inside the center-safe zone, especially on text-heavy slides
 - leave sacrificial background space near the edges
 - keep the screenshot or product visual as the main focus
 - avoid flat billboard layouts
+- avoid oversized white text cards or giant copy panels unless they are part of the anchor's visual language
 - use supporting imagery only when it clearly matches the product category and message
 - no fabricated claims
+- do not render literal `<br />` characters in the final image
 ```
 
 ## 3. Typography-Led Hero or Brand Slide Prompt
@@ -123,7 +136,10 @@ Slide archetype:
 Typography-led hero or brand-value
 
 Required copy:
-Headline: [HEADLINE]
+Headline ([N] lines):
+[LINE 1]
+[LINE 2]
+[Optional line 3]
 Support: [SUPPORT]
 
 Core message:
@@ -146,7 +162,9 @@ Hard rules:
 - keep the composition energetic but controlled
 - compose for a later center-crop to the final App Store size
 - keep all critical text and focal visuals well inside safe margins
+- keep the copy block comfortably inside the center-safe zone
 - leave sacrificial background space near the edges
+- do not render literal `<br />` characters in the final image
 ```
 
 ## 4. Value Slide Prompt
@@ -162,7 +180,10 @@ Slide archetype:
 Brand-value
 
 Required copy:
-Headline: [HEADLINE]
+Headline ([N] lines):
+[LINE 1]
+[LINE 2]
+[Optional line 3]
 Support: [SUPPORT]
 
 Core message:
@@ -181,6 +202,8 @@ Hard rules:
 - make the visual motifs directly reinforce the claims instead of acting as filler
 - compose for a later center-crop to the final App Store size
 - keep all critical text and focal visuals well inside safe margins
+- keep the copy block comfortably inside the center-safe zone
 - leave sacrificial background space near the edges
 - avoid empty, lifeless backgrounds
+- do not render literal `<br />` characters in the final image
 ```

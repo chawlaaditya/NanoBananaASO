@@ -179,6 +179,15 @@ Iron rules for screenshot copy:
 - avoid vague aspirational lines that say little
 - avoid marketing buzzwords unless the claim is concrete and real
 
+Render-safe copy rule:
+- use `<br />` only in planning documents, layout plans, and review notes
+- when writing the actual image-generation prompt, convert planned line breaks into explicit multi-line copy blocks such as:
+  - `Headline (2 lines):`
+  - `Line 1`
+  - `Line 2`
+- explicitly tell the image model not to render literal `<br />` characters in the final image
+- do not assume Nano Banana or Gemini will interpret HTML-style line break tokens correctly
+
 Use these headline modes:
 
 | Type | What it does | Example |
@@ -206,7 +215,8 @@ Copy process:
 3. Check line length. If a line is too dense, add or change `<br />`.
 4. Cover the UI with your hand and read only the text. If the sequence reads like a feature catalog instead of a story, rewrite it.
 5. Confirm each slide still sells only one idea.
-6. Lock the approved headline set before building final layouts.
+6. Convert approved `<br />` planning copy into render-safe prompt copy with explicit line blocks.
+7. Lock the approved headline set before building final layouts.
 
 ### 3. Tell the user exactly which screenshots to capture
 
@@ -322,6 +332,9 @@ Follow these rules:
 - keep the screenshot or core product visual as the main focus
 - add supporting imagery only when it strengthens the message and the app category
 - avoid dead empty backgrounds and avoid text-only billboard compositions
+- explicitly lock the headline font family or type style to the anchor on follow-up slides
+- do not let follow-up slides drift into serif headlines or a different typography voice unless the anchor already uses that
+- avoid oversized white text cards or giant copy panels unless they are already part of the anchor’s design language
 
 Use tasteful variation signals pulled from strong App Store campaigns:
 - bold color-field slides with oversized headline type
@@ -368,6 +381,12 @@ Use these default crop-safe rules for portrait slides:
 - top safe margin: at least 6 percent of canvas height
 - bottom safe margin: at least 8 percent of canvas height
 - never let key copy or focal objects touch the outer frame
+
+For text-heavy or proof-heavy slides, use stronger defaults:
+- keep headline and support copy inside roughly the middle 70 percent of the canvas
+- do not anchor important copy flush to the far left or far right edges
+- keep chips and side claims fully inside the same safe zone
+- shorten the copy before pushing type closer to the crop boundary
 
 When writing prompts, explicitly tell Nano Banana or Gemini:
 - compose for a later center-crop to the final App Store size
@@ -499,6 +518,9 @@ Always include:
 - make the copy the argument and the UI the visual proof
 - keep the slide in the same family as the style anchor
 - make the visual language reinforce the slide’s message
+- when using planned `<br />` copy, convert it into explicit prompt lines rather than pasting the token literally
+- explicitly say `do not render literal <br /> characters`
+- explicitly say `use the same headline font family / type style as the anchor`
 
 When generating a value slide with no screenshot, say so explicitly.
 
@@ -510,6 +532,7 @@ Actively avoid these common bad outcomes:
 - using a Flash image model as the default Gemini path
 - skipping the copy-first phase or generating layouts before headlines are locked
 - writing screenshot text like feature documentation instead of an ad argument
+- pasting `<br />` directly into an image-generation prompt and getting the token rendered in the output
 - saving only one set of outputs and skipping the native/export split
 - using a raw or differently sized anchor image as the follow-up family reference
 - trusting the model’s returned size instead of normalizing
@@ -529,6 +552,8 @@ Actively avoid these common bad outcomes:
 - using feature lists as headlines
 - using vague or buzzword-heavy headlines that do not sell a concrete user benefit
 - building a set whose screenshots can be shuffled into any order without changing meaning
+- letting text-heavy slides sit too close to the crop boundary because the raw render looked safe
+- allowing follow-up slides to drift into a different font family or giant text-card treatment than the anchor
 - letting decorative panels repeat the same text with no added meaning
 - creating “AI” slides with cliché imagery rather than product-grounded value panels
 
