@@ -1,6 +1,6 @@
 # Nano Banana ASO
 
-An agent skill for building premium, consistent App Store screenshot campaigns with Nano Banana or Gemini image generation.
+An agent skill for building premium, consistent App Store screenshot campaigns with Nano Banana.
 
 This skill helps an agent:
 - analyze an app codebase for brand, claims, and differentiators
@@ -38,7 +38,7 @@ The skill is built around a specific sequence so the screenshot set stays consis
    - shorten text-heavy slides before pushing copy toward crop edges
 
 6. Generate a style anchor
-   - create slide 1 first with Nano Banana or Gemini
+   - create slide 1 first with Nano Banana
    - use it to define typography, background language, panel treatment, device treatment, and overall visual family
 
 7. Generate the rest of the set
@@ -90,10 +90,10 @@ output/
 
 ## Model Guidance
 
-- Prefer `Nano Banana` when available.
-- If your workflow treats Nano Banana as Gemini, use `Nano Banana via Gemini Pro Image Preview`.
-- For Gemini, prefer the `Pro Image Preview` model path for final campaign generation.
-- Do not silently fall back to Flash for the main set.
+- Use `Nano Banana` only.
+- Before generation, check `GEMINI_API_KEY` first, then `GOOGLE_API_KEY`.
+- If neither key is available, ask the user for the Gemini API key before generation.
+- Do not switch to another image model as a fallback.
 
 ## Install
 
@@ -132,3 +132,19 @@ Example prompt:
 ```text
 Use $nano-banana-app-store-campaign to analyze this app, tell me which screenshots to capture, lock a Nano Banana style anchor, and generate a consistent App Store screenshot campaign.
 ```
+
+## Examples
+
+Here are a few real campaign contact sheets generated with the workflow:
+
+### ClearReply
+
+![ClearReply contact sheet](examples/contact-sheets/clearreply-contact-sheet.png)
+
+### GentleCal
+
+![GentleCal contact sheet](examples/contact-sheets/gentlecal-contact-sheet.png)
+
+### RunPal
+
+![RunPal contact sheet](examples/contact-sheets/runpal-contact-sheet.png)
