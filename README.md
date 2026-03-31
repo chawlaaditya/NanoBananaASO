@@ -40,9 +40,11 @@ The skill is built around a specific sequence so the screenshot set stays consis
 6. Generate a style anchor
    - create slide 1 first with Nano Banana
    - use it to define typography, background language, panel treatment, device treatment, and overall visual family
+   - use it to test cropping, font treatment, CTA cues, and text density before the rest of the set is generated
 
 7. Generate the rest of the set
    - create slides 2 to N as consistent variations of the approved anchor
+   - reuse the findings from perfecting slide 1 so the later slides inherit proven spacing and typography rules
    - keep the screenshot or product visual as the main focus
    - add relevant supporting imagery when it strengthens the message
    - explicitly lock follow-up slides to the anchor’s headline font family / type style

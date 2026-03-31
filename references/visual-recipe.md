@@ -46,6 +46,28 @@ For `1320x2868`:
 
 Keep all must-read text, chips, and focal visuals inside these bounds.
 
+## Source-to-export crop math
+
+The normalizer does a centered crop to the target ratio first, then resizes.
+
+Target ratio:
+- `1320 / 2868 = 0.4603`
+
+If the source is wider than the target ratio:
+- surviving width = `src_h * 0.4603`
+- trim per side = `(src_w - surviving_width) / 2`
+- safer left edge = `trim_per_side + 0.08 * surviving_width`
+- safer right edge = `src_w - safer_left_edge`
+
+Common portrait-source examples:
+- `1024x1536` keeps only about `707px` of width, so about `158px` per side gets cropped
+- `1242x2208` keeps only about `1017px` of width, so about `113px` per side gets cropped
+
+Practical first-pass rule:
+- assume a common portrait source may lose `10 to 16 percent` of width on each side
+- keep all must-read content inside the central `58 to 70 percent` of the source width
+- do not let the model compose important text or focal objects against the original side edges
+
 ## What made the set work
 
 - headlines were large, bold, and extremely scannable

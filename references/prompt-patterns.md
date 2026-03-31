@@ -53,6 +53,8 @@ Hard rules:
 - keep all critical text and focal visuals well inside safe margins
 - keep headline and support copy comfortably inside the center-safe zone, not hugging the side edges
 - leave sacrificial background space near the edges
+- assume the first-pass portrait source may lose about 10 to 16 percent of width on each side during center-crop
+- keep all must-read content inside the central 58 to 70 percent of the source width, not the full canvas
 - keep the screenshot or core product visual as the hero
 - avoid text-only billboard compositions
 - use relevant supporting people, places, or objects only when they strengthen the app story
@@ -79,6 +81,8 @@ The result must clearly belong to the same visual family:
 - same background language
 - same device lighting and shadow treatment
 - same supporting imagery language
+- same proven crop-safe spacing and text-density decisions learned from the anchor
+- same chip / CTA / badge sizing rules that survived normalization in the anchor
 
 Use the attached layout plan as the ruleset.
 Use the supplied screenshot faithfully.
@@ -117,6 +121,8 @@ Hard rules:
 - keep all critical text and focal visuals well inside safe margins
 - keep headline, support, and chips inside the center-safe zone, especially on text-heavy slides
 - leave sacrificial background space near the edges
+- assume the first-pass portrait source may lose about 10 to 16 percent of width on each side during center-crop
+- keep phones, copy, and proof fragments inside the central safe box rather than near the original edges
 - keep the screenshot or product visual as the main focus
 - avoid flat billboard layouts
 - avoid oversized white text cards or giant copy panels unless they are part of the anchor's visual language
@@ -167,6 +173,8 @@ Hard rules:
 - keep all critical text and focal visuals well inside safe margins
 - keep the copy block comfortably inside the center-safe zone
 - leave sacrificial background space near the edges
+- assume the first-pass portrait source may lose about 10 to 16 percent of width on each side during center-crop
+- keep the full headline block well inside the central safe box instead of stretching it toward the edges
 - do not render literal `<br />` characters in the final image
 ```
 
@@ -208,6 +216,8 @@ Hard rules:
 - keep all critical text and focal visuals well inside safe margins
 - keep the copy block comfortably inside the center-safe zone
 - leave sacrificial background space near the edges
+- assume the first-pass portrait source may lose about 10 to 16 percent of width on each side during center-crop
+- keep value panels, symbols, and copy inside the central safe box
 - avoid empty, lifeless backgrounds
 - do not render literal `<br />` characters in the final image
 ```

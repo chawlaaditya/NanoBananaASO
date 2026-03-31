@@ -285,6 +285,7 @@ Generate slide 1 first as the style anchor:
 - define the supporting imagery language for the whole set: people, places, objects, or contextual scenes that match the app
 - keep the screenshot as the hero while the supporting imagery makes the slide feel richer and more alive
 - if the campaign would open stronger with a typography-led or hybrid-ad slide, let the anchor establish that bolder direction instead of defaulting to a centered phone
+- treat slide 1 as a deliberate systems test, not just a pretty first draft
 - treat the anchor as the formal definition of:
   - typography
   - background language
@@ -292,6 +293,19 @@ Generate slide 1 first as the style anchor:
   - device treatment
   - accent behavior
   - overall visual family
+
+Use slide 1 to test the failure-prone details early:
+- crop safety after normalization
+- headline font family, weight, and line breaks
+- support-line size and density
+- chip or badge scale
+- CTA cues, arrows, toggles, or buttons if used
+- phone scale and dominance
+- how much supporting imagery is too much
+- whether the slide still reads instantly at thumbnail size
+
+Do not aim only for “good enough.”
+Aim to perfect the anchor until it gives you a trustworthy system for the rest of the campaign.
 
 If there is no stronger app-specific direction, use the proven portrait recipe from [references/visual-recipe.md](references/visual-recipe.md) as the default composition system.
 
@@ -305,6 +319,17 @@ This is the key consistency trick:
 - scaffold with the image model
 - then use that scaffolded slide as the family reference for the remaining slides
 - use the normalized export of slide 1 as the follow-up style reference, not an arbitrary raw output
+
+After revising slide 1, explicitly record what you learned from fixing it:
+- what crop-safe spacing actually worked
+- which font treatment survived normalization best
+- which chip, CTA, or panel sizes stayed readable
+- which visual motifs were too busy and were removed
+- which text density was acceptable
+- which composition rules should now be enforced for every later slide
+
+Write those anchor findings into the layout plan or prompt log.
+Use them as rules for slides 2 to N so later slides inherit a validated system instead of re-learning the same lesson.
 
 State `Nano Banana` explicitly in the layout plan and prompt log.
 If available, also record whether the credential came from `GEMINI_API_KEY` or `GOOGLE_API_KEY`.
@@ -349,6 +374,8 @@ For every follow-up prompt, explicitly restate the style DNA from the anchor:
 - panel treatment
 - device treatment
 - accent behavior
+- the crop-safe findings learned from anchor revisions
+- the font, CTA, chip, and spacing decisions that proved reliable after normalization
 
 Follow this output pattern exactly:
 - save raw model outputs to `native/`
@@ -380,6 +407,31 @@ Use these default crop-safe rules for portrait slides:
 - bottom safe margin: at least 8 percent of canvas height
 - never let key copy or focal objects touch the outer frame
 
+Use the actual normalization math, not intuition:
+- final iPhone portrait target ratio is `1320 / 2868 = 0.4603`
+- the normalizer center-crops first, then resizes
+- if the generated source is wider than `0.4603`, the surviving width is `src_h * 0.4603`
+- horizontal trim on each side is `(src_w - src_h * 0.4603) / 2`
+- if the generated source is narrower than `0.4603`, the surviving height is `src_w / 0.4603`
+- vertical trim on top and bottom is `(src_h - src_w / 0.4603) / 2`
+
+Turn that into a first-pass safe box before you prompt:
+- for wide portrait sources, the safe left edge is `horizontal_trim + 0.08 * surviving_width`
+- for wide portrait sources, the safe right edge is `src_w - safe_left_edge`
+- for wide portrait sources, the safe top edge is `0.06 * src_h`
+- for wide portrait sources, the safe bottom edge is `0.92 * src_h`
+- for narrow portrait sources, mirror the same logic vertically with the top and bottom trim
+
+Common first-pass examples:
+- for a `1024x1536` source, only about `707px` of width survives; about `158px` is cut off on each side; safer content zone is roughly `x=216..808`, `y=92..1413`
+- for a `1242x2208` source, only about `1017px` of width survives; about `113px` is cut off on each side; safer content zone is roughly `x=194..1048`, `y=132..2031`
+
+When the exact first-pass source size is still unknown:
+- assume a common portrait source wider than the final ratio
+- act as if roughly `10 to 16 percent` of the source width may disappear from each side
+- keep all must-read copy, phones, faces, chips, arrows, and proof panels inside the central `58 to 70 percent` of the source width on first pass
+- this conservative first-pass rule is better than asking the model to “just leave some margin”
+
 For text-heavy or proof-heavy slides, use stronger defaults:
 - keep headline and support copy inside roughly the middle 70 percent of the canvas
 - do not anchor important copy flush to the far left or far right edges
@@ -390,6 +442,9 @@ When writing prompts, explicitly tell Nano Banana:
 - compose for a later center-crop to the final App Store size
 - keep all critical text and key visuals well within safe margins
 - leave sacrificial background space near the edges for normalization
+- assume the first-pass portrait source may lose around 10 to 16 percent of width on each side during center-crop
+- keep the entire must-read composition inside the central safe box rather than the full source canvas
+- do not place headlines, chips, CTA cues, or the phone silhouette near the original left or right edges
 
 If a slide looks good only before cropping, it is not done.
 

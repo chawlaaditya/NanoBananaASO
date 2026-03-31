@@ -56,6 +56,15 @@ Campaign positioning:
 - supporting imagery language: [people / places / objects / contextual scenes]
 - follow-up anchor source: [normalized slide 1 export path]
 
+## Anchor Findings
+
+- crop-safe spacing that survived normalization: [notes]
+- headline font treatment that held up best: [notes]
+- support-line density that still read clearly: [notes]
+- chip / badge / CTA sizing that worked: [notes]
+- motifs or panels removed for being too busy: [notes]
+- reusable rules for slides 2 to N: [notes]
+
 ## Export Standard
 
 - final export size: `1320x2868`
@@ -71,6 +80,13 @@ Campaign positioning:
 - bottom safe margin: at least 8 percent of height
 - leave sacrificial background space near the edges
 - do not rely on normalization to save an edge-heavy composition
+- write down the expected first-pass crop math for the source size when known
+- if the source is wider than the target ratio, calculate:
+  - surviving width = `src_h * 0.4603`
+  - trim per side = `(src_w - surviving width) / 2`
+  - safer left edge = `trim + 0.08 * surviving width`
+  - safer right edge = `src_w - safer left edge`
+- if source size is unknown, assume the first pass may lose `10 to 16 percent` of width on each side and compose inside the central safe box
 
 ## Shared Visual System
 
@@ -153,12 +169,14 @@ Campaign positioning:
 ## Workflow
 
 1. Generate slide 1 first as the style anchor.
-2. Review and revise slide 1 if needed.
-3. Save the raw slide 1 output to `native/`.
-4. Normalize slide 1 into `export-<width>x<height>/`.
-5. Generate slides 2 to N using the normalized slide 1 export as the style reference.
-6. State the chosen image tool in the prompt log or generation notes.
-6.5. Record whether the Nano Banana credential came from `GEMINI_API_KEY`, `GOOGLE_API_KEY`, or the user.
-7. Normalize all exports.
-8. Build a contact sheet.
+2. Stress-test slide 1 for crop, font, CTA, chip, and panel behavior.
+3. Review and revise slide 1 until it works as a reliable system.
+4. Save the raw slide 1 output to `native/`.
+5. Normalize slide 1 into `export-<width>x<height>/`.
+6. Write the anchor findings into the plan or prompt log.
+7. Generate slides 2 to N using the normalized slide 1 export plus the anchor findings as the style reference.
+8. State the chosen image tool in the prompt log or generation notes.
+8.5. Record whether the Nano Banana credential came from `GEMINI_API_KEY`, `GOOGLE_API_KEY`, or the user.
+9. Normalize all exports.
+10. Build a contact sheet.
 ```

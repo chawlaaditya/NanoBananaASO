@@ -26,6 +26,7 @@ output/
 - Keep a `prompt-log.md`.
 - Build a `contact-sheet.png` from the normalized exports.
 - Use the normalized export of slide 1 as the follow-up style reference.
+- Use the fixes learned from slide 1 as follow-up generation rules, not just the image itself.
 - Generate source slides with crop-safe margins so normalization does not remove key content.
 - Run at least one anchor crop-verification pass and one final full-set crop-verification pass.
 - During each crop-verification pass, visually inspect the normalized images themselves and keep regenerating until the crop works.
@@ -41,6 +42,7 @@ This pattern fixes two common failure modes:
 2. Style drift
    - If later slides reference a raw or differently sized image, composition and spacing can drift.
    - Using the normalized slide 1 export as the family reference makes the campaign more stable.
+   - Reusing the anchor findings for fonts, spacing, chips, and CTA scale makes the campaign more stable too.
 
 3. Cropped-off copy or focal visuals
    - If the source image uses the full canvas too aggressively, normalization can clip the layout.
