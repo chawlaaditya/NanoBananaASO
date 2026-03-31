@@ -1,6 +1,6 @@
 # Nano Banana ASO
 
-An agent skill for building premium, consistent App Store screenshot campaigns with Nano Banana.
+An agent skill for building premium, consistent App Store screenshot campaigns with Nano Banana Pro.
 
 This skill helps an agent:
 - analyze an app codebase for brand, claims, and differentiators
@@ -38,7 +38,7 @@ The skill is built around a specific sequence so the screenshot set stays consis
    - shorten text-heavy slides before pushing copy toward crop edges
 
 6. Generate a style anchor
-   - create slide 1 first with Nano Banana
+   - create slide 1 first with Nano Banana Pro
    - use it to define typography, background language, panel treatment, device treatment, and overall visual family
    - use it to test cropping, font treatment, CTA cues, and text density before the rest of the set is generated
 
@@ -94,7 +94,7 @@ output/
 
 ## Model Guidance
 
-- Use `Nano Banana` only.
+- Use `Nano Banana Pro` only by default.
 - Before generation, check `GEMINI_API_KEY` first, then `GOOGLE_API_KEY`.
 - If neither key is available, ask the user for the Gemini API key before generation.
 - Do not switch to another image model as a fallback.
@@ -134,16 +134,12 @@ After installing, restart Codex so the new skill is picked up.
 Example prompt:
 
 ```text
-Use $nano-banana-app-store-campaign to analyze this app, tell me which screenshots to capture, lock a Nano Banana style anchor, and generate a consistent App Store screenshot campaign.
+Use $nano-banana-app-store-campaign to analyze this app, tell me which screenshots to capture, lock a Nano Banana Pro style anchor, and generate a consistent App Store screenshot campaign.
 ```
 
 ## Examples
 
 Here are a few real campaign contact sheets generated with the workflow:
-
-### ClearReply
-
-![ClearReply contact sheet](examples/contact-sheets/clearreply-contact-sheet.png)
 
 ### GentleCal
 
